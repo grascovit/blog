@@ -1,0 +1,17 @@
+require: rubocop-rspec
+
+Rails:
+  Enabled: true
+
+AllCops:
+  TargetRubyVersion: 2.3
+
+  Include:
+    - '**/config.ru'
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'db/schema.rb'
+
+Style/Documentation:
+  Enabled: false
