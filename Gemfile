@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.4'
 
+gem 'bcrypt', '~> 3.1.11'
 gem 'coffee-rails', '~> 4.2'
 gem 'figaro'
 gem 'jbuilder', '~> 2.5'
