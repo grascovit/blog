@@ -4,10 +4,12 @@ source 'https://rubygems.org'
 
 ruby '2.3.4'
 
+gem 'aws-sdk', '~> 2'
 gem 'bcrypt', '~> 3.1.11'
 gem 'coffee-rails', '~> 4.2'
 gem 'figaro'
 gem 'jbuilder', '~> 2.5'
+gem 'paperclip', '~> 5.0.0'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.2'
