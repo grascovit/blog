@@ -12,6 +12,10 @@ Then, make a copy of the `application.yml.example` file located in the `config` 
 DATABASE_NAME: blog-helabs
 DATABASE_USERNAME: your-postgres-username
 DATABASE_PASSWORD: your-postgres-password
+AWS_ACCESS_KEY_ID: AKIAJMAVBU74SHBEIP2A
+AWS_SECRET_ACCESS_KEY: HsDWL1d04tSdS6cTF6A9lftb+CbNfntnkw97NRL0
+AWS_REGION: sa-east-1
+S3_BUCKET_NAME: blog-helabs-production
 ```
 
 After this, execute the following steps:
