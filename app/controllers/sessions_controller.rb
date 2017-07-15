@@ -1,11 +1,27 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
+  skip_before_action :authenticate_user, except: [:destroy]
+
   def new; end
 
-  def create; end
+  def create
+    user = User.find_by(email: session_params[:email])
 
-  def destroy; end
+    if user && user.authenticate(session_params[:password])
+      session[:user_id] = user.id
+      # TODO: redirect_to root_url
+    else
+      flash.now[:alert] = 'Email ou senha inválidos'
+      render :new
+    end
+  end
+
+  def destroy
+    session.delete(:user_id)
+    @current_user = nil
+    # TODO: redirect_to root_url
+  end
 
   private
 
