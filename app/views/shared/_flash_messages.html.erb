@@ -1,0 +1,13 @@
+<% flash.each do |type, value| %>
+  <div class="ui <%= flash_message_class(type) %> message">
+    <% if value.kind_of?(Array) %>
+      <ul class="list">
+        <% value.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <%= value %>
+    <% end %>
+  </div>
+<% end %>
