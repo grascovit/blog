@@ -26,14 +26,14 @@ pt-BR:
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
   controllers:
     user:
-      create: Usuário criado com sucesso
+      created: Usuário criado com sucesso
       updated: Usuário atualizado com sucesso
       destroyed: Usuário excluído com sucesso
   views:
     user:
       new: Cadastro de usuário
       edit: Alterar dados
-      sign_up: Cadastrar
+      ok: Enviar
     session:
       email: Email
       password: Senha
@@ -249,4 +249,5 @@ pt-BR:
       default: "%a, %d de %B de %Y, %H:%M:%S %z"
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
+      date_only: "%d/%m/%Y"
     pm: ''

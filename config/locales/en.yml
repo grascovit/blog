@@ -8,6 +8,6 @@ en:
     user:
       new: New user
       edit: Edit user
-      sign_up: Sign up
+      ok: Done
     session:
       login: Login
