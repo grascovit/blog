@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user, only: %i[new create]
+  skip_before_action :authenticate_user, only: %i[new create show]
 
   # GET /users
   def index
