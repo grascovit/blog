@@ -1,0 +1,32 @@
+<%= form_for @user, html: { class: 'ui form' } do |f| %>
+  <%= render 'shared/error_messages', object: @user %>
+  <div class="required field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, required: true %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="required field">
+    <%= f.label :username %>
+    <%= f.text_field :username, required: true %>
+  </div>
+  <div class="required field">
+    <%= f.label :email %>
+    <%= f.email_field :email, required: true %>
+  </div>
+  <% if @user.new_record? %>
+    <div class="required field">
+      <%= f.label :password %>
+      <%= f.password_field :password, required: true %>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="field">
+    <%= f.submit t('views.user.sign_up'), class: 'ui submit fluid green inverted button' %>
+  </div>
+<% end %>
