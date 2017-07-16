@@ -14,15 +14,15 @@
             <p></p>
           </div>
           <div class="extra">
-            Participa desde <%= l(@user.created_at, format: :date_only) %>
+            <%= t('views.user.member_since') %> <%= l(@user.created_at, format: :date_only) %>
           </div>
           <div class="follow">
             <div class="ui label">
-              Seguidores
+              <%= t('views.user.followers') %>
               <div class="detail">214</div>
             </div>
             <div class="ui label">
-              Seguindo
+              <%= t('views.user.following') %>
               <div class="detail">120</div>
             </div>
           </div>
@@ -35,10 +35,10 @@
       <%= form_for @post, html: { class: 'ui form' } do |f| %>
         <%= render 'shared/error_messages', object: @post %>
         <div class="required field">
-          <%= f.text_area :message, placeholder: 'Escreva alguma coisa para o mundo...', rows: 3, required: true %>
+          <%= f.text_area :message, placeholder: t('views.user.write_something'), rows: 3, required: true %>
         </div>
         <div class="field">
-          <%= f.submit 'Postar', class: 'ui submit fluid green inverted button' %>
+          <%= f.submit t('views.user.post'), class: 'ui submit fluid green inverted button' %>
         </div>
       <% end %>
     <% end %>

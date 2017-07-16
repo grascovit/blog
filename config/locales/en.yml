@@ -9,5 +9,13 @@ en:
       new: New user
       edit: Edit user
       ok: Done
+      followers: Followers
+      following: Following
+      member_since: Member since
+      write_something: Write something to the world...
+      post: Post
     session:
       login: Login
+  time:
+    formats:
+      date_only: "%d/%m/%Y"

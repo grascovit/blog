@@ -34,6 +34,11 @@ pt-BR:
       new: Cadastro de usuário
       edit: Alterar dados
       ok: Enviar
+      followers: Seguidores
+      following: Seguindo
+      member_since: Participa desde
+      write_something: Escreva alguma coisa para o mundo...
+      post: Postar
     session:
       email: Email
       password: Senha
