@@ -9,7 +9,9 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1
-  def show; end
+  def show
+    @user = User.find(params[:id])
+  end
 
   # GET /users/new
   def new
@@ -17,7 +19,9 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit; end
+  def edit
+    @user = current_user
+  end
 
   # POST /users
   def create
