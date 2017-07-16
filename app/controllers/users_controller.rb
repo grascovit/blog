@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     @user = User.find(params[:id])
+    @post = current_user.posts.build if user_signed_in?
   end
 
   # GET /users/new

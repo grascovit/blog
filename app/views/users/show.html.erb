@@ -1,0 +1,65 @@
+<div class="ui stackable grid">
+  <div class="six wide column">
+    <div class="ui items">
+      <div class="item">
+        <div class="ui small image">
+          <%= image_tag @user.avatar.url(:medium) %>
+        </div>
+        <div class="middle aligned content">
+          <div class="header"><%= @user.full_name %></div>
+          <div class="meta">
+            <span>@<%= @user.username %></span>
+          </div>
+          <div class="description">
+            <p></p>
+          </div>
+          <div class="extra">
+            Participa desde <%= l(@user.created_at, format: :date_only) %>
+          </div>
+          <div class="follow">
+            <div class="ui label">
+              Seguidores
+              <div class="detail">214</div>
+            </div>
+            <div class="ui label">
+              Seguindo
+              <div class="detail">120</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ten wide column">
+    <% if @user == @current_user %>
+      <%= form_for @post, html: { class: 'ui form' } do |f| %>
+        <%= render 'shared/error_messages', object: @post %>
+        <div class="required field">
+          <%= f.text_area :message, placeholder: 'Escreva alguma coisa para o mundo...', rows: 3, required: true %>
+        </div>
+        <div class="field">
+          <%= f.submit 'Postar', class: 'ui submit fluid green inverted button' %>
+        </div>
+      <% end %>
+    <% end %>
+    <h3 class="ui header">Posts</h3>
+    <div class="ui comments">
+      <% @user.posts.by_created_date.each do |post| %>
+        <div class="comment">
+          <span class="avatar">
+            <%= image_tag @user.avatar.url(:thumb) %>
+          </span>
+          <div class="content">
+            <span class="author">@<%= @user.username %></span>
+            <div class="metadata">
+              <span class="date"><%= l(post.created_at, format: :short) %></span>
+            </div>
+            <div class="text">
+              <%= post.message %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

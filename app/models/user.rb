@@ -15,6 +15,6 @@ class User < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: %r{\Aimage/.*\z}
 
   def full_name
-    "#{first_name} #{last_name}"  
+    "#{first_name} #{last_name}"
   end
 end

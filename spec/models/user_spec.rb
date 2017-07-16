@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
 
   describe 'instance methods' do
     describe '#full_name' do
-      it 'should return the first and the last name in a string' do
+      it 'returns the first and the last name in a string' do
         user = create(:user)
         first_name = user.first_name
         last_name = user.last_name
