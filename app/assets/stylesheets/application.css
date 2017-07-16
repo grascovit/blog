@@ -21,3 +21,14 @@
 .container {
   margin: 1rem;
 }
+
+/*--------------------
+        Errors
+---------------------*/
+.field_with_errors > label {
+  font-weight: bold;
+  color: #C82121;
+  display: block;
+  margin: 0 0 0.28571429rem 0;
+  font-size: 0.92857143em;
+}
