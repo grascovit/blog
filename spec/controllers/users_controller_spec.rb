@@ -83,11 +83,11 @@ RSpec.describe UsersController, type: :controller do
   describe 'PUT #update' do
     let(:user) { create(:user) }
 
-    let(:new_attributes) do
-      attributes_for(:user)
-    end
-
     context 'with valid params' do
+      let(:new_attributes) do
+        attributes_for(:user)
+      end
+
       it 'updates the current user' do
         put :update,
             params: { id: user.to_param, user: new_attributes },
