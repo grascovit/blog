@@ -43,8 +43,21 @@
           </span>
           <div class="content">
             <span class="author">@<%= @user.username %></span>
+            <% if @user == @current_user %>
+              <div data-turbolinks="false" class="ui dropdown">
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                  <%= link_to t('views.post.edit'), edit_user_post_path(@user, post), class: 'item' %>
+                  <%= link_to t('views.post.destroy'), user_post_path(@user, post),
+                              method: :delete,
+                              data: { confirm: t('views.post.delete_confirmation') },
+                              class: 'item' %>
+                </div>
+              </div>
+            <% end %>
             <div class="metadata">
               <span class="date"><%= l(post.created_at, format: :short) %></span>
+
             </div>
             <div class="text">
               <%= post.message %>
