@@ -25,11 +25,21 @@ pt-BR:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
   controllers:
+    post:
+      created: Post criado com sucesso
+      updated: Post atualizado com sucesso
+      destroyed: Post excluído com sucesso
     user:
       created: Usuário criado com sucesso
       updated: Usuário atualizado com sucesso
       destroyed: Usuário excluído com sucesso
   views:
+    post:
+      write_something: Escreva alguma coisa para o mundo...
+      ok: Postar
+      delete_confirmation: Você tem certeza?
+      edit: Editar
+      destroy: Excluir
     user:
       new: Cadastro de usuário
       edit: Alterar dados
@@ -37,8 +47,6 @@ pt-BR:
       followers: Seguidores
       following: Seguindo
       member_since: Participa desde
-      write_something: Escreva alguma coisa para o mundo...
-      post: Postar
     session:
       email: Email
       password: Senha

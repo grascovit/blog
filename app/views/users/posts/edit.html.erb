@@ -1,0 +1,20 @@
+<div class="ui stackable centered grid">
+  <div class="ten wide column">
+    <div class="ui items">
+      <div class="item">
+        <div class="image">
+          <%= image_tag @post.user.avatar.url(:medium) %>
+        </div>
+        <div class="content">
+          <%= link_to "@#{@post.user.username}", @current_user, class: 'header' %>
+          <div class="meta">
+            <span><%= l(@post.created_at, format: :long) %></span>
+          </div>
+          <div class="description">
+            <%= render 'users/posts/form' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

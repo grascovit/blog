@@ -32,15 +32,7 @@
   </div>
   <div class="ten wide column">
     <% if @user == @current_user %>
-      <%= form_for @post, html: { class: 'ui form' } do |f| %>
-        <%= render 'shared/error_messages', object: @post %>
-        <div class="required field">
-          <%= f.text_area :message, placeholder: t('views.user.write_something'), rows: 3, required: true %>
-        </div>
-        <div class="field">
-          <%= f.submit t('views.user.post'), class: 'ui submit fluid green inverted button' %>
-        </div>
-      <% end %>
+      <%= render 'users/posts/form' %>
     <% end %>
     <h3 class="ui header">Posts</h3>
     <div class="ui comments">
