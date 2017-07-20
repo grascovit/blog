@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(session_params[:password])
       session[:user_id] = user.id
-      # TODO: redirect_to root_url
+      redirect_to root_url
     else
       flash.now[:alert] = 'Email ou senha inválidos'
       render :new
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:user_id)
     @current_user = nil
-    # TODO: redirect_to root_url
+    redirect_to root_url
   end
 
   private

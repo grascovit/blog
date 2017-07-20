@@ -40,7 +40,9 @@ RSpec.describe 'Sessions', type: :request do
       end
 
       it 'redirects to the root path' do
-        # TODO: finish this after setting a root route
+        post login_path, params: valid_attributes
+
+        expect(response).to redirect_to(root_url)
       end
     end
 
@@ -66,6 +68,13 @@ RSpec.describe 'Sessions', type: :request do
         delete logout_path
 
         expect(session[:user_id]).to eq nil
+      end
+
+      it 'redirects to the root path' do
+        post login_path, params: valid_attributes
+        delete logout_path
+
+        expect(response).to redirect_to(root_url)
       end
     end
 
