@@ -1,3 +1,4 @@
 # frozen_string_literal: true
 
-SimpleCov.start 'rails'
+module UsersHelper
+end

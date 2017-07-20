@@ -10,6 +10,25 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require semantic-ui
  *= require_tree .
  *= require_self
  */
+
+/*--------------------
+        Container
+---------------------*/
+.container {
+  margin: 1rem;
+}
+
+/*--------------------
+        Errors
+---------------------*/
+.field_with_errors > label {
+  font-weight: bold;
+  color: #C82121;
+  display: block;
+  margin: 0 0 0.28571429rem 0;
+  font-size: 0.92857143em;
+}

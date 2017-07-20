@@ -1,0 +1,9 @@
+<%= form_for [@user, @post], html: { class: 'ui form' } do |f| %>
+  <%= render 'shared/error_messages', object: @post %>
+  <div class="required field">
+    <%= f.text_area :message, placeholder: t('views.post.write_something'), rows: 3, required: true %>
+  </div>
+  <div class="field">
+    <%= f.submit t('views.post.ok'), class: 'ui submit fluid green inverted button' %>
+  </div>
+<% end %>

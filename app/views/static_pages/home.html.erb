@@ -1,0 +1,19 @@
+<div class="ui stackable centered grid">
+  <div class="ui title center aligned row">
+    <h1 class="ui green header">
+      <i class="talk green icon"></i>
+      <div class="content">
+        Blog
+      </div>
+    </h1>
+  </div>
+  <div class="ui slogan center aligned row">
+    <h2 class="ui green header"><%= t('views.home.slogan') %></h2>
+  </div>
+  <div class="ui sign-up center aligned row">
+    <%= link_to new_user_path, class: 'ui green inverted button' do %>
+      <i class="add user icon"></i>
+      <%= t('views.home.signup_button') %>
+    <% end %>
+  </div>
+</div>

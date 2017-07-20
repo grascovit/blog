@@ -1,0 +1,19 @@
+<div class="ui stackable centered grid">
+  <div class="six wide column">
+    <h3 class="ui center aligned header">Login</h3>
+
+    <%= form_for(:session, url: login_path, html: { method: :post, class: 'ui form' }) do |f| %>
+      <div class="required field">
+        <%= f.label :email, t('views.session.email') %>
+        <%= f.email_field :email, required: true %>
+      </div>
+      <div class="required field">
+        <%= f.label :password, t('views.session.password') %>
+        <%= f.password_field :password, required: true %>
+      </div>
+      <div class="field">
+        <%= f.submit t('views.session.login'), class: 'ui submit fluid green inverted button' %>
+      </div>
+    <% end %>
+  </div>
+</div>
