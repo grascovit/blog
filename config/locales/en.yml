@@ -9,6 +9,9 @@ en:
       updated: User updated successfully
       destroyed: User destroyed successfully
   views:
+    home:
+      signup_button: I want to sign up
+      slogan: Say whatever you want to the world
     navbar:
       edit_profile: Edit profile
       home: Home

@@ -34,6 +34,9 @@ pt-BR:
       updated: Usuário atualizado com sucesso
       destroyed: Usuário excluído com sucesso
   views:
+    home:
+      signup_button: Quero me cadastrar
+      slogan: Fale o que você quiser para o mundo
     navbar:
       edit_profile: Editar perfil
       home: Início
