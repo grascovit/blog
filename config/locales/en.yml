@@ -9,6 +9,13 @@ en:
       updated: User updated successfully
       destroyed: User destroyed successfully
   views:
+    navbar:
+      edit_profile: Edit profile
+      home: Home
+      login: Login
+      logout: Logout
+      users: Users
+      search: Search for users...
     post:
       write_something: Write something to the world...
       ok: Post

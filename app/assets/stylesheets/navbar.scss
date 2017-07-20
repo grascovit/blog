@@ -1,0 +1,26 @@
+/*--------------------
+        Menu
+---------------------*/
+.ui.secondary.menu {
+  .user-avatar.dropdown.item:hover {
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .user-avatar.dropdown.item {
+    background: transparent;
+  }
+
+  .item {
+    font-size: 1.12rem;
+  }
+}
+
+/*--------------------
+      User avatar
+---------------------*/
+
+.ui.circular.avatar.image {
+  width: 44px;
+  height: 44px;
+}

@@ -34,6 +34,13 @@ pt-BR:
       updated: Usuário atualizado com sucesso
       destroyed: Usuário excluído com sucesso
   views:
+    navbar:
+      edit_profile: Editar perfil
+      home: Início
+      login: Entrar
+      logout: Sair
+      users: Usuários
+      search: Procure um usuário...
     post:
       write_something: Escreva alguma coisa para o mundo...
       ok: Postar
