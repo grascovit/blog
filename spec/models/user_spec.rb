@@ -5,6 +5,16 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'associations' do
     it { is_expected.to have_many(:posts).dependent(:destroy) }
+    it {
+      is_expected.to have_many(:followers_relationships)
+        .with_foreign_key('following_id').dependent(:destroy)
+    }
+    it {
+      is_expected.to have_many(:following_relationships)
+        .with_foreign_key('follower_id').dependent(:destroy)
+    }
+    it { is_expected.to have_many(:followers).through(:followers_relationships) }
+    it { is_expected.to have_many(:following).through(:following_relationships) }
   end
 
   describe 'validations' do
