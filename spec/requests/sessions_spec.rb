@@ -39,10 +39,10 @@ RSpec.describe 'Sessions', type: :request do
         expect(session[:user_id]).to eq user.id
       end
 
-      it 'redirects to the root path' do
+      it 'redirects to the user path' do
         post login_path, params: valid_attributes
 
-        expect(response).to redirect_to(root_url)
+        expect(response).to redirect_to(user_path(user))
       end
     end
 
