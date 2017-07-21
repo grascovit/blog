@@ -29,6 +29,9 @@ pt-BR:
       created: Post criado com sucesso
       updated: Post atualizado com sucesso
       destroyed: Post excluído com sucesso
+    session:
+      bad_credentials: Email ou senha inválidos
+      unauthorized: Você precisa fazer login ou se cadastrar antes de continuar
     user:
       created: Usuário criado com sucesso
       updated: Usuário atualizado com sucesso

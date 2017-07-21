@@ -114,7 +114,7 @@ RSpec.describe Users::PostsController, type: :controller do
         put :update,
             params: { id: post.to_param, user_id: post.user.id, post: invalid_attributes }
 
-        expect(flash[:alert]).to eq 'Você precisa fazer login ou se cadastrar antes de continuar'
+        expect(flash[:alert]).to eq I18n.t('controllers.session.unauthorized')
       end
     end
   end
@@ -156,7 +156,7 @@ RSpec.describe Users::PostsController, type: :controller do
         delete :destroy,
                params: { id: post.to_param, user_id: post.user.id }
 
-        expect(flash[:alert]).to eq 'Você precisa fazer login ou se cadastrar antes de continuar'
+        expect(flash[:alert]).to eq I18n.t('controllers.session.unauthorized')
       end
     end
   end

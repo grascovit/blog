@@ -120,7 +120,7 @@ RSpec.describe UsersController, type: :controller do
       it 'displays a flash alert' do
         put :update, params: { id: user.to_param, user: invalid_attributes }
 
-        expect(flash[:alert]).to eq 'Você precisa fazer login ou se cadastrar antes de continuar'
+        expect(flash[:alert]).to eq I18n.t('controllers.session.unauthorized')
       end
     end
   end
@@ -160,7 +160,7 @@ RSpec.describe UsersController, type: :controller do
         user = create(:user)
         delete :destroy, params: { id: user.to_param }
 
-        expect(flash[:alert]).to eq 'Você precisa fazer login ou se cadastrar antes de continuar'
+        expect(flash[:alert]).to eq I18n.t('controllers.session.unauthorized')
       end
     end
   end

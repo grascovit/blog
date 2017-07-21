@@ -4,6 +4,9 @@ en:
       created: Post created successfully
       updated: Post updated successfully
       destroyed: Post destroyed successfully
+    session:
+      bad_credentials: Invalid email or password
+      unauthorized: You need to log in or sign up before continuing.
     user:
       created: User created successfully
       updated: User updated successfully
