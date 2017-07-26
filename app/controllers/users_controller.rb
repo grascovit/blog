@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @post = current_user.posts.build if user_signed_in?
-    @relationship = current_user.followers_relationships.build if user_signed_in?
+    @relationship = Relationship.find_by(follower: current_user, following: @user) if user_signed_in?
   end
 
   # GET /users/new

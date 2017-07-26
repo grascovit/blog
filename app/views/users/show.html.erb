@@ -25,6 +25,7 @@
               <%= t('views.user.following') %>
               <div class="detail"><%= @user.following.count %></div>
             </div>
+            <%= render 'users/relationships/form' %>
           </div>
         </div>
       </div>
