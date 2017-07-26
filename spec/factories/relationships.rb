@@ -2,7 +2,12 @@
 
 FactoryGirl.define do
   factory :relationship do
-    follower
-    followed
+    follower { create(:user) }
+    following { create(:user) }
+  end
+
+  factory :invalid_relationship do
+    follower nil
+    following nil
   end
 end

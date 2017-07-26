@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :posts, controller: 'users/posts', except: %i[index new]
+    resources :relationships, controller: 'users/relationships', only: %i[create destroy]
   end
 
   root to: 'static_pages#home'

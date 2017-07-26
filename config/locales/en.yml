@@ -4,6 +4,9 @@ en:
       created: Post created successfully
       updated: Post updated successfully
       destroyed: Post destroyed successfully
+    relationship:
+      created: You've started following @%{username}
+      destroyed: You've stopped following @%{username}
     session:
       bad_credentials: Invalid email or password
       unauthorized: You need to log in or sign up before continuing.
@@ -28,6 +31,9 @@ en:
       delete_confirmation: Are you sure?
       edit: Edit
       destroy: Delete
+    relationship:
+      create: Follow
+      destroy: Unfollow
     user:
       new: New user
       edit: Edit user
