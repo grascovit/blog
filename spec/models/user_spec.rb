@@ -35,5 +35,26 @@ RSpec.describe User, type: :model do
         expect(user.full_name).to eq "#{first_name} #{last_name}"
       end
     end
+
+    describe '#follows?' do
+      context 'when user follows the params user' do
+        it 'returns true' do
+          follower = create(:user)
+          following = create(:user)
+          create(:relationship, follower: follower, following: following)
+
+          expect(follower.follows?(following)).to eq true
+        end
+      end
+
+      context 'when user does not follow the params user' do
+        it 'returns false' do
+          follower = create(:user)
+          following = create(:user)
+
+          expect(follower.follows?(following)).to eq false
+        end
+      end
+    end
   end
 end

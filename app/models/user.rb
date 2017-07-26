@@ -23,4 +23,8 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def follows?(user)
+    Relationship.exists?(follower: self, following: user)
+  end
 end
