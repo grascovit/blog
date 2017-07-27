@@ -57,4 +57,44 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe 'scopes' do
+    describe '.search' do
+      context 'when the query param is the user first name' do
+        it 'returns the user with first name Test' do
+          user = create(:user, first_name: 'Test')
+          another_user = create(:user, first_name: 'Another')
+
+          expect(User.search('tes')).to include(user)
+        end
+      end
+
+      context 'when the query param is the user email' do
+        it 'returns the user with email test@test.com' do
+          user = create(:user, email: 'test@test.com')
+          another_user = create(:user, first_name: 'Another')
+
+          expect(User.search('test@')).to include(user)
+        end
+      end
+
+      context 'when the query param is the username' do
+        it 'returns the user with username test' do
+          user = create(:user, username: 'test')
+          another_user = create(:user, first_name: 'Another')
+
+          expect(User.search('tes')).to include(user)
+        end
+      end
+
+      context 'when the query param is blank' do
+        it 'returns all users' do
+          user = create(:user, first_name: 'Test')
+          another_user = create(:user, first_name: 'Another')
+
+          expect(User.search('')).to include(user, another_user)
+        end
+      end
+    end
+  end
 end
