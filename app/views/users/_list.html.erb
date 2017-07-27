@@ -1,0 +1,27 @@
+<div class="users-list">
+  <div class="ui four stackable cards">
+    <% @users.each do |user| %>
+      <%= link_to user_path(user), class: 'card' do %>
+        <div class="image">
+          <%= image_tag user.avatar.url %>
+        </div>
+        <div class="content">
+          <span class="header"><%= user.full_name %></span>
+          <div class="meta">
+            <span>@<%= user.username %></span>
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="ui green label">
+            <%= t('views.user.followers') %>
+            <div class="detail"><%= user.followers.count %></div>
+          </div>
+          <div class="ui green label">
+            <%= t('views.user.following') %>
+            <div class="detail"><%= user.following.count %></div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -17,14 +17,14 @@
             <%= t('views.user.member_since') %> <%= l(@user.created_at, format: :date_only) %>
           </div>
           <div class="follow">
-            <div class="ui green label">
+            <%= link_to user_followers_path(@user), class: 'ui green label' do %>
               <%= t('views.user.followers') %>
               <div class="detail"><%= @user.followers.count %></div>
-            </div>
-            <div class="ui green label">
+            <% end %>
+            <%= link_to user_following_path(@user), class: 'ui green label' do %>
               <%= t('views.user.following') %>
               <div class="detail"><%= @user.following.count %></div>
-            </div>
+            <% end %>
             <%= render 'users/relationships/form' %>
           </div>
         </div>
