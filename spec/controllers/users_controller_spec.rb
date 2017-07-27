@@ -182,4 +182,13 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to be_success
     end
   end
+
+  describe 'GET #search' do
+    it 'returns a success response' do
+      user = create(:user)
+      get :search, params: { query: user.username }, session: { user_id: user.id }
+
+      expect(response).to be_success
+    end
+  end
 end
