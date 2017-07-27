@@ -2,11 +2,17 @@ pt-BR:
   activerecord:
     models:
       post: Post
+      relationship: Relacionamento
       user: Usuário
     attributes:
       post:
         message: Mensagem
         user: Usuário
+        created_at: Criado em
+        updated_at: Atualizado em
+      relationship:
+        follower: Seguidor
+        following: Seguindo
         created_at: Criado em
         updated_at: Atualizado em
       user:
@@ -29,6 +35,12 @@ pt-BR:
       created: Post criado com sucesso
       updated: Post atualizado com sucesso
       destroyed: Post excluído com sucesso
+    relationship:
+      created: Você começou a seguir @%{username}
+      destroyed: Você parou de seguir @%{username}
+    session:
+      bad_credentials: Email ou senha inválidos
+      unauthorized: Você precisa fazer login ou se cadastrar antes de continuar
     user:
       created: Usuário criado com sucesso
       updated: Usuário atualizado com sucesso
@@ -50,6 +62,9 @@ pt-BR:
       delete_confirmation: Você tem certeza?
       edit: Editar
       destroy: Excluir
+    relationship:
+      create: Seguir
+      destroy: Deixar de seguir
     user:
       new: Cadastro de usuário
       edit: Alterar dados

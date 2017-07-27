@@ -39,10 +39,10 @@ RSpec.describe 'Sessions', type: :request do
         expect(session[:user_id]).to eq user.id
       end
 
-      it 'redirects to the root path' do
+      it 'redirects to the user path' do
         post login_path, params: valid_attributes
 
-        expect(response).to redirect_to(root_url)
+        expect(response).to redirect_to(user_path(user))
       end
     end
 
@@ -56,7 +56,7 @@ RSpec.describe 'Sessions', type: :request do
       it 'displays a flash alert' do
         post login_path, params: invalid_attributes
 
-        expect(flash[:alert]).to eq 'Email ou senha inválidos'
+        expect(flash[:alert]).to eq I18n.t('controllers.session.bad_credentials')
       end
     end
   end
@@ -82,7 +82,7 @@ RSpec.describe 'Sessions', type: :request do
       it 'displays a flash alert' do
         delete logout_path
 
-        expect(flash[:alert]).to eq 'Você precisa fazer login ou se cadastrar antes de continuar'
+        expect(flash[:alert]).to eq I18n.t('controllers.session.unauthorized')
       end
     end
   end

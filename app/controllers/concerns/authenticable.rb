@@ -6,7 +6,7 @@ module Authenticable
   end
 
   def unauthorized
-    flash[:alert] = 'Você precisa fazer login ou se cadastrar antes de continuar'
+    flash[:alert] = t('controllers.session.unauthorized')
     redirect_to login_path
   end
 

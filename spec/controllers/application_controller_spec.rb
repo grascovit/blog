@@ -23,7 +23,7 @@ RSpec.describe ApplicationController, type: :controller do
         it 'displays a flash alert' do
           get :index # fake action call
 
-          expect(flash[:alert]).to eq 'Você precisa fazer login ou se cadastrar antes de continuar'
+          expect(flash[:alert]).to eq I18n.t('controllers.session.unauthorized')
         end
 
         it 'redirects to the login page' do

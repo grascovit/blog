@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   resources :users do
+    get 'followers', to: 'users#followers'
+    get 'following', to: 'users#following'
     resources :posts, controller: 'users/posts', except: %i[index new]
+    resources :relationships, controller: 'users/relationships', only: %i[create destroy]
   end
 
   root to: 'static_pages#home'
