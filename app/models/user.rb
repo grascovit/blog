@@ -20,6 +20,12 @@ class User < ApplicationRecord
                     default_url: ':style/missing-avatar.png'
   validates_attachment_content_type :avatar, content_type: %r{\Aimage/.*\z}
 
+  scope :search, ->(query) {
+    where('LOWER(username) LIKE :query OR
+      LOWER(email) LIKE :query OR
+      LOWER(first_name) LIKE :query', query: "#{query.downcase}%")
+  }
+
   def full_name
     "#{first_name} #{last_name}"
   end

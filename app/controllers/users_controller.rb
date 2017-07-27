@@ -64,6 +64,11 @@ class UsersController < ApplicationController
     @users = @user.following
   end
 
+  # GET /users/search
+  def search
+    @users = User.search(params[:query])
+  end
+
   private
 
   def user_params
