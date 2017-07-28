@@ -66,6 +66,12 @@ pt-BR:
       search: Procure um usuário...
     notification:
       user_started_following: "@%{username} começou a seguir você"
+    pagination:
+      first: "&laquo; Primeira"
+      last: "Última &raquo;"
+      next: Próxima &rsaquo;
+      previous: "&lsaquo; Anterior"
+      truncate: "&hellip;"
     post:
       write_something: Escreva alguma coisa para o mundo...
       ok: Postar
