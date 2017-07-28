@@ -15,6 +15,7 @@ RSpec.describe User, type: :model do
     }
     it { is_expected.to have_many(:followers).through(:followers_relationships) }
     it { is_expected.to have_many(:following).through(:following_relationships) }
+    it { is_expected.to have_many(:notifications).dependent(:destroy) }
   end
 
   describe 'validations' do
