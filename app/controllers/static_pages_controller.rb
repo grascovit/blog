@@ -6,8 +6,6 @@ class StaticPagesController < ApplicationController
   def home
     @current_user = current_user
 
-    if @current_user.present?
-      redirect_to @current_user  
-    end
+    redirect_to @current_user if @current_user.present?
   end
 end
