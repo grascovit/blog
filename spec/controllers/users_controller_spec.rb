@@ -21,13 +21,25 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe 'GET #show' do
-    it 'returns a success response' do
-      user = create(:user)
-      get :show,
-          params: { id: user.to_param },
-          session: { user_id: user.id }
+    context 'when user visits his/her own page' do
+      it 'returns a success response' do
+        user = create(:user)
+        get :show,
+            params: { id: user.to_param },
+            session: { user_id: user.id }
 
-      expect(response).to be_success
+        expect(response).to be_success
+      end
+    end
+
+    context 'when user visits another user page' do
+      it 'returns a success response' do
+        user = create(:user)
+        get :show,
+            params: { id: user.to_param }
+
+        expect(response).to be_success
+      end
     end
   end
 

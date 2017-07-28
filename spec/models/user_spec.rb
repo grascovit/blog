@@ -15,6 +15,7 @@ RSpec.describe User, type: :model do
     }
     it { is_expected.to have_many(:followers).through(:followers_relationships) }
     it { is_expected.to have_many(:following).through(:following_relationships) }
+    it { is_expected.to have_many(:notifications).dependent(:destroy) }
   end
 
   describe 'validations' do
@@ -53,6 +54,31 @@ RSpec.describe User, type: :model do
           following = create(:user)
 
           expect(follower.follows?(following)).to eq false
+        end
+      end
+    end
+
+    describe '#posts_by_user' do
+      context 'when user visits his own page' do
+        it 'returns user posts and posts from people he/she follows' do
+          user = create(:user)
+          following = create(:user)
+          create(:relationship, follower: user, following: following)
+          post = create(:post, user: user)
+          following_post = create(:post, user: following)
+
+          expect(user.posts_by_user(user)).to include(post, following_post)
+        end
+      end
+
+      context 'when user visits another user page' do
+        it 'returns only the visited user posts' do
+          user = create(:user)
+          visited_user = create(:user)
+          post = create(:post, user: user)
+          visited_user_post = create(:post, user: visited_user)
+
+          expect(visited_user.posts_by_user(user)).to eq([visited_user_post])
         end
       end
     end

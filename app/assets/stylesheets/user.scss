@@ -5,31 +5,58 @@
   font-weight: normal;
 }
 
-.ui.items > .item > .image > img {
-  height: 150px;
-  border-radius: 1rem;
+.ui.items > .item {
+  .image > img {
+    height: 150px;
+    border-radius: 1rem;
+  }
+
+  .extra {
+    color: rgba(0, 0, 0, 0.55);
+  }
+
+  .content > .follow {
+    margin-top: 0.5em;
+  }
 }
 
-.ui.items > .item .extra {
-  color: rgba(0, 0, 0, 0.55);
+.pagination {
+  text-align: center;
+
+  .ui.pagination.menu {
+    margin: 1em 0;
+  }
 }
 
-.ui.comments .comment .avatar {
-  height: 42px;
-}
+.ui.comments {
+  .comment {
+    height: 50px;
+    margin: 0.5em 0;
 
-.ui.items > .item > .content > .follow {
-  margin-top: 0.5em;
-}
+    .avatar {
+      height: 46px;
+    }
 
-.ui.comments > .comment > .content > .ui.dropdown {
-  float: right;
+    .content > .ui.dropdown {
+      float: right;
+    }
+
+    .text {
+      margin: 0.1em 0 0.25em;
+    }
+  }
+
+  .ui.divider {
+    margin: 0.7em 0 0.5em 0;
+  }
 }
 
 /*--------------------
       Users list
 ---------------------*/
 .users-list {
+  text-align: center;
+
   .ui.four.stackable.cards {
     .card {
       .image > img {
@@ -41,6 +68,10 @@
         text-align: center;
       }
     }
+  }
+
+  .ui.pagination.menu {
+    margin: 2em 0;
   }
 }
 

@@ -2,12 +2,12 @@
         Menu
 ---------------------*/
 .ui.secondary.menu {
-  .user-avatar.dropdown.item:hover {
+  .user-avatar.dropdown.item:hover, .notifications.dropdown.item:hover {
     cursor: pointer;
     background: transparent;
   }
 
-  .user-avatar.dropdown.item {
+  .user-avatar.dropdown.item, .notifications.dropdown.item {
     background: transparent;
   }
 
@@ -22,6 +22,27 @@
 .ui.circular.avatar.image {
   width: 44px;
   height: 44px;
+}
+
+/*--------------------
+      Notification
+---------------------*/
+.notification-date {
+  color: rgba(0, 0, 0, 0.4);
+  margin-top: 0.2em;
+  font-size: 0.75em;
+}
+
+/*--------------------
+        Desktop
+---------------------*/
+@media only screen and (min-width: 1199px) {
+  .ui.secondary.menu {
+    .notifications {
+      margin: 0;
+      padding: 0;
+    }
+  }
 }
 
 /*--------------------

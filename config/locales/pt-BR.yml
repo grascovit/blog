@@ -1,10 +1,18 @@
 pt-BR:
   activerecord:
     models:
+      notification: Notificação
       post: Post
       relationship: Relacionamento
       user: Usuário
     attributes:
+      notification:
+        message: Mensagem
+        action: Ação
+        user: Usuário
+        read_at: Lida em
+        created_at: Criada em
+        updated_at: Atualizada em
       post:
         message: Mensagem
         user: Usuário
@@ -56,6 +64,14 @@ pt-BR:
       logout: Sair
       users: Usuários
       search: Procure um usuário...
+    notification:
+      user_started_following: "@%{username} começou a seguir você"
+    pagination:
+      first: "&laquo; Primeira"
+      last: "Última &raquo;"
+      next: Próxima &rsaquo;
+      previous: "&lsaquo; Anterior"
+      truncate: "&hellip;"
     post:
       write_something: Escreva alguma coisa para o mundo...
       ok: Postar

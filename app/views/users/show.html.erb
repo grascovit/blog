@@ -37,35 +37,34 @@
     <% end %>
     <h3 class="ui header">Posts</h3>
     <div class="ui comments">
-      <% @user.posts.by_created_date.each do |post| %>
+      <% @posts.each do |post| %>
         <div class="comment">
           <span class="avatar">
-            <%= image_tag @user.avatar.url(:thumb) %>
+            <%= image_tag post.user.avatar.url(:thumb) %>
           </span>
           <div class="content">
-            <span class="author">@<%= @user.username %></span>
-            <% if @user == @current_user %>
-              <div data-turbolinks="false" class="ui dropdown">
-                <i class="dropdown icon"></i>
-                <div class="menu">
-                  <%= link_to t('views.post.edit'), edit_user_post_path(@user, post), class: 'item' %>
-                  <%= link_to t('views.post.destroy'), user_post_path(@user, post),
-                              method: :delete,
-                              data: { confirm: t('views.post.delete_confirmation') },
-                              class: 'item' %>
-                </div>
-              </div>
-            <% end %>
+            <span class="author">@<%= post.user.username %></span>
             <div class="metadata">
               <span class="date"><%= l(post.created_at, format: :short) %></span>
-
             </div>
             <div class="text">
               <%= post.message %>
             </div>
+            <% if @current_user == post.user %>
+              <div class="actions">
+                <%= link_to t('views.post.edit'), edit_user_post_path(@user, post), class: 'item' %>
+                <%= link_to t('views.post.destroy'), user_post_path(@user, post),
+                  method: :delete,
+                  data: { confirm: t('views.post.delete_confirmation') },
+                  class: 'item' %>
+              </div>     
+            <% end %>
           </div>
         </div>
       <% end %>
+    </div>
+    <div class="pagination">
+      <%= paginate @posts %>
     </div>
   </div>
 </div>

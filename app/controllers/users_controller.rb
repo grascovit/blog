@@ -5,13 +5,14 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = User.all.page(params[:page])
   end
 
   # GET /users/1
   def show
     @user = User.find(params[:id])
     @post = current_user.posts.build if user_signed_in?
+    @posts = @user.posts_by_user(current_user).page(params[:page])
     @relationship = Relationship.find_by(follower: current_user, following: @user) if user_signed_in?
   end
 
@@ -55,18 +56,18 @@ class UsersController < ApplicationController
   # GET /users/1/followers
   def followers
     @user = User.find(params[:user_id])
-    @users = @user.followers
+    @users = @user.followers.page(params[:page])
   end
 
   # GET /users/1/following
   def following
     @user = User.find(params[:user_id])
-    @users = @user.following
+    @users = @user.following.page(params[:page])
   end
 
   # GET /users/search
   def search
-    @users = User.search(params[:query])
+    @users = User.search(params[:query]).page(params[:page])
   end
 
   private
