@@ -31,4 +31,19 @@ RSpec.describe Notification, type: :model do
       end
     end
   end
+
+  describe 'scopes' do
+    describe '.by_created_date' do
+      it 'returns the posts ordered by descending creation date' do
+        old_notification = create(:notification)
+        middle_notification = create(:notification)
+        new_notification = create(:notification)
+        ordered_notification = Notification.by_created_date
+
+        expect(ordered_notification.first).to eq new_notification
+        expect(ordered_notification.second).to eq middle_notification
+        expect(ordered_notification.last).to eq old_notification
+      end
+    end
+  end
 end
