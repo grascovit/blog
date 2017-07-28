@@ -21,6 +21,8 @@ class User < ApplicationRecord
                     default_url: ':style/missing-avatar.png'
   validates_attachment_content_type :avatar, content_type: %r{\Aimage/.*\z}
 
+  paginates_per 8
+
   scope :search, ->(query) {
     where('LOWER(username) LIKE :query OR
       LOWER(email) LIKE :query OR
@@ -33,5 +35,11 @@ class User < ApplicationRecord
 
   def follows?(user)
     Relationship.exists?(follower: self, following: user)
+  end
+
+  def posts_by_user(current_user)
+    posts = current_user == self ? Post.following_and_mine(self) : self.posts
+
+    posts.includes(:user).by_created_date
   end
 end

@@ -8,6 +8,8 @@ class Notification < ApplicationRecord
   validates :message, presence: true
   validates :action, presence: true
 
+  scope :by_created_date, -> { order(created_at: :desc) }
+
   def read?
     read_at.present?
   end
