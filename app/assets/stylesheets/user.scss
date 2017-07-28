@@ -5,25 +5,42 @@
   font-weight: normal;
 }
 
-.ui.items > .item > .image > img {
-  height: 150px;
-  border-radius: 1rem;
+.ui.items > .item {
+  .image > img {
+    height: 150px;
+    border-radius: 1rem;
+  }
+
+  .extra {
+    color: rgba(0, 0, 0, 0.55);
+  }
+
+  .content > .follow {
+    margin-top: 0.5em;
+  }
 }
 
-.ui.items > .item .extra {
-  color: rgba(0, 0, 0, 0.55);
-}
+.ui.comments {
+  .comment {
+    height: 50px;
+    margin: 0.5em 0;
 
-.ui.comments .comment .avatar {
-  height: 42px;
-}
+    .avatar {
+      height: 46px;
+    }
 
-.ui.items > .item > .content > .follow {
-  margin-top: 0.5em;
-}
+    .content > .ui.dropdown {
+      float: right;
+    }
 
-.ui.comments > .comment > .content > .ui.dropdown {
-  float: right;
+    .text {
+      margin: 0.1em 0 0.25em;
+    }
+  }
+
+  .ui.divider {
+    margin: 0.7em 0 0.5em 0;
+  }
 }
 
 /*--------------------
