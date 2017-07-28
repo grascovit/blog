@@ -10,7 +10,7 @@ RSpec.describe StaticPagesController, type: :controller do
         get :home, session: { user_id: user.id }
 
         expect(response).to redirect_to user_path(user)
-      end  
+      end
     end
 
     context 'when user is not logged in' do
