@@ -24,5 +24,17 @@ RSpec.describe Post, type: :model do
         expect(ordered_posts.last).to eq old_post
       end
     end
+
+    describe '.following_and_mine' do
+      it 'returns the user posts and the posts from people he/she follows' do
+        user = create(:user)
+        another_user = create(:user)
+        user_post = create(:post, user: user)
+        another_user_post = create(:post, user: another_user)
+        create(:relationship, follower: user, following: another_user)
+
+        expect(Post.following_and_mine(user)).to include(user_post, another_user_post)
+      end
+    end
   end
 end
