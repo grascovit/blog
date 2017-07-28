@@ -20,6 +20,14 @@
   }
 }
 
+.pagination {
+  text-align: center;
+
+  .ui.pagination.menu {
+    margin: 1em 0;
+  }
+}
+
 .ui.comments {
   .comment {
     height: 50px;
@@ -47,6 +55,8 @@
       Users list
 ---------------------*/
 .users-list {
+  text-align: center;
+
   .ui.four.stackable.cards {
     .card {
       .image > img {
@@ -58,6 +68,10 @@
         text-align: center;
       }
     }
+  }
+
+  .ui.pagination.menu {
+    margin: 2em 0;
   }
 }
 
