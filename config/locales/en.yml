@@ -25,6 +25,8 @@ en:
       logout: Logout
       users: Users
       search: Search for users...
+    notification:
+      user_started_following: "@%{username} started following you"
     post:
       write_something: Write something to the world...
       ok: Post

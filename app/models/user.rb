@@ -9,6 +9,7 @@ class User < ApplicationRecord
                                      foreign_key: 'follower_id', dependent: :destroy
   has_many :followers, through: :followers_relationships, source: :follower
   has_many :following, through: :following_relationships, source: :following
+  has_many :notifications, dependent: :destroy
   has_many :posts, dependent: :destroy
 
   validates :first_name, presence: true

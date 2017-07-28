@@ -9,6 +9,19 @@
         <%= text_field_tag :query, nil, placeholder: t('views.navbar.search'), class: 'prompt' %>
         <%= submit_tag '', name: nil, class: 'search link icon', style: 'visibility: hidden' %>
       <% end %>
+      <div class="ui notifications dropdown item">
+        <i class="alarm outline icon"></i>
+        <div class="menu">
+          <% @current_user.notifications.each do |notification| %>
+            <%= link_to '', class: 'item' do %>
+              <%= notification.message %>
+              <div class="notification-date">
+                <%= l(notification.created_at, format: :short) %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
       <div class="ui user-avatar dropdown item">
         <%= image_tag @current_user.avatar.url(:medium), class: 'ui circular avatar image' %>
         <div class="menu">

@@ -6,4 +6,16 @@ class Relationship < ApplicationRecord
 
   validates :follower_id, presence: true
   validates :following_id, presence: true
+
+  after_create :create_notification
+
+  private
+
+  def create_notification
+    Notification.create(
+      message: I18n.t('views.notification.user_started_following', username: follower.username),
+      action: :user_started_following,
+      user: following
+    )
+  end
 end
