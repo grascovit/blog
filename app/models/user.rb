@@ -34,4 +34,10 @@ class User < ApplicationRecord
   def follows?(user)
     Relationship.exists?(follower: self, following: user)
   end
+
+  def posts_by_user(current_user)
+    posts = current_user == self ? Post.following_and_mine(self) : self.posts
+
+    posts.includes(:user).by_created_date
+  end
 end
