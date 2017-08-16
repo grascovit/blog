@@ -26,11 +26,11 @@
         <%= image_tag @current_user.avatar.url(:medium), class: 'ui circular avatar image' %>
         <div class="menu">
           <%= link_to t('views.navbar.edit_profile'), edit_user_path(@current_user), class: 'item' %>
-          <%= link_to t('views.navbar.logout'), logout_path, method: :delete, class: 'item' %>
+          <%= link_to t('views.navbar.logout'), session_path, method: :delete, class: 'item' %>
         </div>
       </div>
     <% else %>
-      <%= link_to t('views.navbar.login'), login_path, class: 'item' %>
+      <%= link_to t('views.navbar.login'), new_session_path, class: 'item' %>
     <% end %>
   </div>
 </div>

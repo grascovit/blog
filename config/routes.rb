@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'home', to: 'static_pages#home'
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
-  delete 'logout', to: 'sessions#destroy'
+  resources :sessions, only: %i[create new]
+  resource :session, only: %i[destroy]
 
   resources :users do
     get 'followers', to: 'users#followers'

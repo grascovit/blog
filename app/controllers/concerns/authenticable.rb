@@ -7,7 +7,7 @@ module Authenticable
 
   def unauthorized
     flash[:alert] = t('controllers.session.unauthorized')
-    redirect_to login_path
+    redirect_to new_session_path
   end
 
   def current_user

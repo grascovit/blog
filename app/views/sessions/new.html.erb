@@ -2,7 +2,7 @@
   <div class="six wide column">
     <h3 class="ui center aligned header">Login</h3>
 
-    <%= form_for(:session, url: login_path, html: { method: :post, class: 'ui form' }) do |f| %>
+    <%= form_for(:session, url: sessions_path, html: { method: :post, class: 'ui form' }) do |f| %>
       <div class="required field">
         <%= f.label :email, t('views.session.email') %>
         <%= f.email_field :email, required: true %>
