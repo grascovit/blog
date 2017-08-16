@@ -5,7 +5,7 @@
   <% end %>
   <div class="right menu">
     <% if @current_user.present? %>
-      <%= form_tag(search_users_path, method: :get, class: 'ui transparent icon input') do %>
+      <%= form_tag(users_path, method: :get, class: 'ui transparent icon input') do %>
         <%= text_field_tag :query, nil, placeholder: t('views.navbar.search'), class: 'prompt' %>
         <%= submit_tag '', name: nil, class: 'search link icon', style: 'visibility: hidden' %>
       <% end %>

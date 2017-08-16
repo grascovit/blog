@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all.page(params[:page])
+    @users = User.search(params[:query]).page(params[:page])
   end
 
   # GET /users/1
@@ -63,11 +63,6 @@ class UsersController < ApplicationController
   def following
     @user = User.find(params[:user_id])
     @users = @user.following.page(params[:page])
-  end
-
-  # GET /users/search
-  def search
-    @users = User.search(params[:query]).page(params[:page])
   end
 
   private
