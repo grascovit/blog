@@ -176,22 +176,4 @@ RSpec.describe UsersController, type: :controller do
       end
     end
   end
-
-  describe 'GET #followers' do
-    it 'returns a success response' do
-      user = create(:user)
-      get :followers, params: { user_id: user.id }, session: { user_id: user.id }
-
-      expect(response).to be_success
-    end
-  end
-
-  describe 'GET #following' do
-    it 'returns a success response' do
-      user = create(:user)
-      get :following, params: { user_id: user.id }, session: { user_id: user.id }
-
-      expect(response).to be_success
-    end
-  end
 end

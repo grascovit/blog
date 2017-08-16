@@ -53,18 +53,6 @@ class UsersController < ApplicationController
     redirect_to users_url, notice: t('controllers.user.destroyed')
   end
 
-  # GET /users/1/followers
-  def followers
-    @user = User.find(params[:user_id])
-    @users = @user.followers.page(params[:page])
-  end
-
-  # GET /users/1/following
-  def following
-    @user = User.find(params[:user_id])
-    @users = @user.following.page(params[:page])
-  end
-
   private
 
   def user_params

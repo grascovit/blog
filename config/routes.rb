@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resource :session, only: %i[destroy]
 
   resources :users do
-    get 'followers', to: 'users#followers'
-    get 'following', to: 'users#following'
+    resources :followers, controller: 'users/followers', only: %i[index]
+    resources :following, controller: 'users/following', only: %i[index]
     resources :posts, controller: 'users/posts', except: %i[index new]
     resources :relationships, controller: 'users/relationships', only: %i[create destroy]
   end

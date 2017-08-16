@@ -5,13 +5,13 @@ module Users
     before_action :set_user
     before_action :set_post, only: %i[edit update show destroy]
 
-    # GET /posts/1
+    # GET /users/1/posts/1
     def show; end
 
-    # GET /posts/1/edit
+    # GET /users/1/posts/1/edit
     def edit; end
 
-    # POST /posts
+    # POST /users/1/posts
     def create
       @post = @user.posts.build(post_params)
 
@@ -22,7 +22,7 @@ module Users
       end
     end
 
-    # PATCH/PUT /posts/1
+    # PATCH/PUT /users/1/posts/1
     def update
       if @post.update(post_params)
         redirect_to current_user, notice: t('controllers.post.updated')
@@ -31,7 +31,7 @@ module Users
       end
     end
 
-    # DELETE /posts/1
+    # DELETE /users/1/posts/1
     def destroy
       @post.destroy
       redirect_to current_user, notice: t('controllers.post.destroyed')
