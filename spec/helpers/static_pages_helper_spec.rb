@@ -1,20 +1,21 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe UserDecorator do
+RSpec.describe StaticPagesHelper, type: :helper do
   describe '#home_link' do
     context 'when user is logged in' do
       it 'returns the user path' do
-        user = UserDecorator.new(create(:user))
+        user = create(:user)
+        @current_user = user
 
-        expect(user.home_link).to eq(h.user_path(user))
+        expect(helper.home_link).to eq(user_path(user))
       end
     end
 
     context 'when user is not logged in' do
       it 'returns the root path' do
-        user = UserDecorator.new(nil)
-
-        expect(user.home_link).to eq(h.root_path)
+        expect(helper.home_link).to eq(root_path)
       end
     end
   end
