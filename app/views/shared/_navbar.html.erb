@@ -1,5 +1,5 @@
 <div class="ui stackable secondary menu">
-  <%= link_to t('views.navbar.home'), home_link, class: 'item' %>
+  <%= link_to t('views.navbar.home'), @current_user.home_link, class: 'item' %>
   <% if @current_user.present? %>
     <%= link_to t('views.navbar.users'), users_path, class: 'item' %>
   <% end %>
