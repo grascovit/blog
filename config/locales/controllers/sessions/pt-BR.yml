@@ -1,0 +1,5 @@
+pt-BR:
+  controllers:
+    session:
+      bad_credentials: Email ou senha inválidos
+      unauthorized: Você precisa fazer login ou se cadastrar antes de continuar

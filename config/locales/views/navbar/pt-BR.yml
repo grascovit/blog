@@ -1,0 +1,9 @@
+pt-BR:
+  views:
+    navbar:
+      edit_profile: Editar perfil
+      home: Início
+      login: Entrar
+      logout: Sair
+      users: Usuários
+      search: Procure um usuário...

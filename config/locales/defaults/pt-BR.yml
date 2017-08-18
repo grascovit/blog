@@ -1,97 +1,11 @@
 pt-BR:
   activerecord:
-    models:
-      notification: Notificação
-      post: Post
-      relationship: Relacionamento
-      user: Usuário
-    attributes:
-      notification:
-        message: Mensagem
-        action: Ação
-        user: Usuário
-        read_at: Lida em
-        created_at: Criada em
-        updated_at: Atualizada em
-      post:
-        message: Mensagem
-        user: Usuário
-        created_at: Criado em
-        updated_at: Atualizado em
-      relationship:
-        follower: Seguidor
-        following: Seguindo
-        created_at: Criado em
-        updated_at: Atualizado em
-      user:
-        first_name: Primeiro nome
-        last_name: Sobrenome
-        username: Usuário
-        email: Email
-        password: Senha
-        avatar: Imagem de perfil
-        created_at: Criado em
-        updated_at: Atualizado em
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
-  controllers:
-    post:
-      created: Post criado com sucesso
-      updated: Post atualizado com sucesso
-      destroyed: Post excluído com sucesso
-    relationship:
-      created: Você começou a seguir @%{username}
-      destroyed: Você parou de seguir @%{username}
-    session:
-      bad_credentials: Email ou senha inválidos
-      unauthorized: Você precisa fazer login ou se cadastrar antes de continuar
-    user:
-      created: Usuário criado com sucesso
-      updated: Usuário atualizado com sucesso
-      destroyed: Usuário excluído com sucesso
-  views:
-    home:
-      signup_button: Quero me cadastrar
-      slogan: Fale o que você quiser para o mundo
-    navbar:
-      edit_profile: Editar perfil
-      home: Início
-      login: Entrar
-      logout: Sair
-      users: Usuários
-      search: Procure um usuário...
-    notification:
-      user_started_following: "@%{username} começou a seguir você"
-    pagination:
-      first: "&laquo; Primeira"
-      last: "Última &raquo;"
-      next: Próxima &rsaquo;
-      previous: "&lsaquo; Anterior"
-      truncate: "&hellip;"
-    post:
-      write_something: Escreva alguma coisa para o mundo...
-      ok: Postar
-      delete_confirmation: Você tem certeza?
-      edit: Editar
-      destroy: Excluir
-    relationship:
-      create: Seguir
-      destroy: Deixar de seguir
-    user:
-      new: Cadastro de usuário
-      edit: Alterar dados
-      ok: Enviar
-      followers: Seguidores
-      following: Seguindo
-      member_since: Participa desde
-    session:
-      email: Email
-      password: Senha
-      login: Entrar
   date:
     abbr_day_names:
     - Dom

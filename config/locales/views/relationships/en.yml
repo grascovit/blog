@@ -1,0 +1,5 @@
+en:
+  views:
+    relationship:
+      create: Follow
+      destroy: Unfollow

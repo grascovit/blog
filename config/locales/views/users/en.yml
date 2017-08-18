@@ -1,0 +1,9 @@
+en:
+  views:
+    user:
+      new: New user
+      edit: Edit user
+      ok: Done
+      followers: Followers
+      following: Following
+      member_since: Member since
