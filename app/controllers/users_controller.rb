@@ -10,10 +10,10 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]).decorate
     @post = current_user.posts.build if user_signed_in?
     @posts = @user.posts_by_user(current_user).page(params[:page])
-    @relationship = Relationship.find_by(follower: current_user, following: @user) if user_signed_in?
+    @relationship = Relationship.find_by(follower: current_user, following: @user)
   end
 
   # GET /users/new
