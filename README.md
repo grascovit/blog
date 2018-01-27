@@ -2,7 +2,7 @@
 [![codecov](https://codecov.io/gh/grascovit/blog/branch/master/graph/badge.svg)](https://codecov.io/gh/grascovit/blog)
 
 # Blog
-Project created using Rails 5.1.2 (Ruby 2.3.4), PostgreSQL and RSpec for HE:labs recruitment process.
+Project created using Rails 5.1.4 (Ruby 2.4.2), PostgreSQL and RSpec for HE:labs recruitment process.
 
 #### Setup
 To run the application, execute the following step:
