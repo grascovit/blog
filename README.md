@@ -1,5 +1,5 @@
-[ ![Codeship Status for rascovit/blog-helabs](https://app.codeship.com/projects/1ccb1a70-5690-0135-36a0-7646c47fdefc/status?branch=master)](https://app.codeship.com/projects/235915)
-[![codecov](https://codecov.io/bb/rascovit/blog-helabs/branch/master/graph/badge.svg?token=JmhF6HEGQT)](https://codecov.io/bb/rascovit/blog-helabs)
+[ ![Codeship Status for grascovit/blog](https://app.codeship.com/projects/bce2d560-e5c3-0135-175d-1ab5e756a092/status?branch=master)](https://app.codeship.com/projects/268972)
+[![codecov](https://codecov.io/gh/grascovit/blog/branch/master/graph/badge.svg)](https://codecov.io/gh/grascovit/blog)
 
 # Blog
 Project created using Rails 5.1.2 (Ruby 2.3.4), PostgreSQL and RSpec for HE:labs recruitment process.
