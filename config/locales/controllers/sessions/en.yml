@@ -1,0 +1,5 @@
+en:
+  controllers:
+    session:
+      bad_credentials: Invalid email or password
+      unauthorized: You need to log in or sign up before continuing.

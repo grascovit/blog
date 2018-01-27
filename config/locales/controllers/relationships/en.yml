@@ -1,0 +1,5 @@
+en:
+  controllers:
+    relationship:
+      created: You've started following @%{username}
+      destroyed: You've stopped following @%{username}

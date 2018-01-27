@@ -8,4 +8,12 @@ module ApplicationHelper
       'negative'
     end
   end
+
+  def home_link
+    if @current_user.present?
+      user_path(@current_user)
+    else
+      root_path
+    end
+  end
 end

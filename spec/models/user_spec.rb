@@ -84,7 +84,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe 'scopes' do
+  describe 'class methods' do
     describe '.search' do
       context 'when the query param is the user first name' do
         it 'returns the user with first name Test' do
@@ -95,19 +95,10 @@ RSpec.describe User, type: :model do
         end
       end
 
-      context 'when the query param is the user email' do
-        it 'returns the user with email test@test.com' do
-          user = create(:user, email: 'test@test.com')
-          another_user = create(:user, first_name: 'Another')
-
-          expect(User.search('test@')).to include(user)
-        end
-      end
-
-      context 'when the query param is the username' do
-        it 'returns the user with username test' do
-          user = create(:user, username: 'test')
-          another_user = create(:user, first_name: 'Another')
+      context 'when the query param is the user last name' do
+        it 'returns the user with last name test' do
+          user = create(:user, last_name: 'Test')
+          another_user = create(:user, last_name: 'Another')
 
           expect(User.search('tes')).to include(user)
         end

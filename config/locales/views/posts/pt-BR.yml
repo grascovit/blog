@@ -1,0 +1,8 @@
+pt-BR:
+  views:
+    post:
+      write_something: Escreva alguma coisa para o mundo...
+      ok: Postar
+      delete_confirmation: Você tem certeza?
+      edit: Editar
+      destroy: Excluir

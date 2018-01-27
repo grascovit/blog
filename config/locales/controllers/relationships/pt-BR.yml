@@ -1,0 +1,5 @@
+pt-BR:
+  controllers:
+    relationship:
+      created: Você começou a seguir @%{username}
+      destroyed: Você parou de seguir @%{username}

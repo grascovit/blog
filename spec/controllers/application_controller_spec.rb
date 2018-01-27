@@ -29,7 +29,7 @@ RSpec.describe ApplicationController, type: :controller do
         it 'redirects to the login page' do
           get :index # fake action call
 
-          expect(response).to redirect_to(login_path)
+          expect(response).to redirect_to(new_session_path)
         end
       end
     end

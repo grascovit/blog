@@ -1,0 +1,6 @@
+en:
+  controllers:
+    post:
+      created: Post created successfully
+      updated: Post updated successfully
+      destroyed: Post destroyed successfully

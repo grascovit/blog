@@ -1,0 +1,6 @@
+pt-BR:
+  controllers:
+    user:
+      created: Usuário criado com sucesso
+      updated: Usuário atualizado com sucesso
+      destroyed: Usuário excluído com sucesso

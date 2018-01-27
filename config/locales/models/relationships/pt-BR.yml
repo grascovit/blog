@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      relationship: Relacionamento
+    attributes:
+      relationship:
+        follower: Seguidor
+        following: Seguindo
+        created_at: Criado em
+        updated_at: Atualizado em
