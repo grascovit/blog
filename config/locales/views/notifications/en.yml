@@ -1,0 +1,4 @@
+en:
+  views:
+    notification:
+      user_started_following: "@%{username} started following you"

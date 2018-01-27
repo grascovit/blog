@@ -1,0 +1,9 @@
+pt-BR:
+  views:
+    user:
+      new: Cadastro de usuário
+      edit: Alterar dados
+      ok: Enviar
+      followers: Seguidores
+      following: Seguindo
+      member_since: Participa desde

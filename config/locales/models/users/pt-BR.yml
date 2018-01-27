@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      user: Usuário
+    attributes:
+      user:
+        first_name: Primeiro nome
+        last_name: Sobrenome
+        username: Usuário
+        email: Email
+        password: Senha
+        avatar: Imagem de perfil
+        created_at: Criado em
+        updated_at: Atualizado em

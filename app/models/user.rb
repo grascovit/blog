@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  include PgSearch
+
   has_secure_password
 
   has_many :followers_relationships, class_name: 'Relationship',
@@ -23,11 +25,21 @@ class User < ApplicationRecord
 
   paginates_per 8
 
-  scope :search, ->(query) {
-    where('LOWER(username) LIKE :query OR
-      LOWER(email) LIKE :query OR
-      LOWER(first_name) LIKE :query', query: "#{query.downcase}%")
-  }
+  pg_search_scope :search_by_name,
+                  against: %i[first_name last_name],
+                  using: {
+                    tsearch: { prefix: true },
+                    trigram: {},
+                    dmetaphone: {}
+                  }
+
+  def self.search(query)
+    if query.present?
+      search_by_name(query)
+    else
+      all
+    end
+  end
 
   def full_name
     "#{first_name} #{last_name}"

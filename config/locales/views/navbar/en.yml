@@ -1,0 +1,9 @@
+en:
+  views:
+    navbar:
+      edit_profile: Edit profile
+      home: Home
+      login: Login
+      logout: Logout
+      users: Users
+      search: Search for users...

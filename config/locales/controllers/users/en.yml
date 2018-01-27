@@ -1,0 +1,6 @@
+en:
+  controllers:
+    user:
+       created: User created successfully
+       updated: User updated successfully
+       destroyed: User destroyed successfully

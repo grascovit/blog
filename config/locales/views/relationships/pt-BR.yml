@@ -1,0 +1,5 @@
+pt-BR:
+  views:
+    relationship:
+      create: Seguir
+      destroy: Deixar de seguir

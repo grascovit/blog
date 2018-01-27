@@ -1,0 +1,8 @@
+en:
+  views:
+    post:
+      write_something: Write something to the world...
+      ok: Post
+      delete_confirmation: Are you sure?
+      edit: Edit
+      destroy: Delete

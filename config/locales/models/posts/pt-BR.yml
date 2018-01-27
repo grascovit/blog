@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      post: Post
+  attributes:
+    post:
+      message: Mensagem
+      user: Usuário
+      created_at: Criado em
+      updated_at: Atualizado em

@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      notification: Notificação
+    attributes:
+      notification:
+        message: Mensagem
+        action: Ação
+        user: Usuário
+        read_at: Lida em
+        created_at: Criada em
+        updated_at: Atualizada em

@@ -1,0 +1,6 @@
+pt-BR:
+  views:
+    session:
+      email: Email
+      password: Senha
+      login: Entrar
