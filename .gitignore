@@ -23,3 +23,6 @@
 
 # Ignore coverage folder
 coverage/
+
+# Ignore IDE files
+.idea/

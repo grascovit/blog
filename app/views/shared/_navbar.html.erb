@@ -1,10 +1,10 @@
 <div class="ui stackable secondary menu">
   <%= link_to t('views.navbar.home'), home_link, class: 'item' %>
-  <% if @current_user.present? %>
+  <% if current_user.present? %>
     <%= link_to t('views.navbar.users'), users_path, class: 'item' %>
   <% end %>
   <div class="right menu">
-    <% if @current_user.present? %>
+    <% if current_user.present? %>
       <%= form_tag(users_path, method: :get, class: 'ui transparent icon input') do %>
         <%= text_field_tag :query, nil, placeholder: t('views.navbar.search'), class: 'prompt' %>
         <%= submit_tag '', name: nil, class: 'search link icon', style: 'visibility: hidden' %>
@@ -23,9 +23,9 @@
         </div>
       </div>
       <div class="ui user-avatar dropdown item">
-        <%= image_tag @current_user.avatar.url(:medium), class: 'ui circular avatar image' %>
+        <%= image_tag current_user.avatar.url(:medium), class: 'ui circular avatar image' %>
         <div class="menu">
-          <%= link_to t('views.navbar.edit_profile'), edit_user_path(@current_user), class: 'item' %>
+          <%= link_to t('views.navbar.edit_profile'), edit_user_path(current_user), class: 'item' %>
           <%= link_to t('views.navbar.logout'), session_path, method: :delete, class: 'item' %>
         </div>
       </div>

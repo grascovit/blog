@@ -2,6 +2,9 @@
 
 class UsersController < ApplicationController
   skip_before_action :authenticate_user, only: %i[new create show]
+  before_action :set_user, only: %i[show]
+  before_action :set_posts, only: %i[show]
+  before_action :set_relationship, only: %i[show]
 
   # GET /users
   def index
@@ -10,10 +13,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    @user = User.find(params[:id]).decorate
     @post = current_user.posts.build if user_signed_in?
-    @posts = @user.posts_by_user(current_user).page(params[:page])
-    @relationship = Relationship.find_by(follower: current_user, following: @user)
   end
 
   # GET /users/new
@@ -50,6 +50,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     current_user.destroy
+
     redirect_to users_url, notice: t('controllers.user.destroyed')
   end
 
@@ -64,5 +65,17 @@ class UsersController < ApplicationController
       :password,
       :avatar
     )
+  end
+
+  def set_user
+    @user = User.find(params[:id]).decorate
+  end
+
+  def set_posts
+    @posts = @user.posts_by_user(current_user).page(params[:page])
+  end
+
+  def set_relationship
+    @relationship = Relationship.find_by(follower: current_user, following: @user)
   end
 end

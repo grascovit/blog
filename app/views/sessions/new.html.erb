@@ -5,7 +5,7 @@
     <%= form_for(:session, url: sessions_path, html: { method: :post, class: 'ui form' }) do |f| %>
       <div class="required field">
         <%= f.label :email, t('views.session.email') %>
-        <%= f.email_field :email, required: true %>
+        <%= f.email_field :email, required: true, autofocus: true %>
       </div>
       <div class="required field">
         <%= f.label :password, t('views.session.password') %>
