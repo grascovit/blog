@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  include Authenticable
+
   def flash_message_class(type)
     if type == 'notice'
       'positive'
@@ -10,8 +12,8 @@ module ApplicationHelper
   end
 
   def home_link
-    if @current_user.present?
-      user_path(@current_user)
+    if current_user.present?
+      user_path(current_user)
     else
       root_path
     end

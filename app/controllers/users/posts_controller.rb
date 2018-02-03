@@ -34,6 +34,7 @@ module Users
     # DELETE /users/1/posts/1
     def destroy
       @post.destroy
+
       redirect_to current_user, notice: t('controllers.post.destroyed')
     end
 
