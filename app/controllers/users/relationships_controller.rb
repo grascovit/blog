@@ -20,6 +20,7 @@ module Users
     # DELETE /users/1/relationships/1
     def destroy
       @relationship.destroy
+
       redirect_to @following, notice: t('controllers.relationship.destroyed', username: @following.username)
     end
 

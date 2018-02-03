@@ -4,14 +4,26 @@ Rails:
   Enabled: true
 
 AllCops:
-  TargetRubyVersion: 2.3
-
-  Include:
-    - '**/config.ru'
+  TargetRubyVersion: 2.4.2
   Exclude:
-    - 'vendor/**/*'
-    - 'db/**/*'
-    - 'db/schema.rb'
+    - bin/**/*
+    - config/**/*
+    - vendor/**/*
+    - db/**/*
 
 Style/Documentation:
   Enabled: false
+
+RSpec/ExampleLength:
+  Max: 10
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+Metrics/ModuleLength:
+  Exclude:
+    - spec/**/*
+
+Metrics/LineLength:
+  Max: 120
