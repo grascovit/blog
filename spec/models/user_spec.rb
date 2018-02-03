@@ -74,8 +74,8 @@ RSpec.describe User, type: :model do
       context 'when user visits another user page' do
         it 'returns only the visited user posts' do
           user = create(:user)
+          create(:post, user: user)
           visited_user = create(:user)
-          post = create(:post, user: user)
           visited_user_post = create(:post, user: visited_user)
 
           expect(visited_user.posts_by_user(user)).to eq([visited_user_post])
@@ -89,7 +89,7 @@ RSpec.describe User, type: :model do
       context 'when the query param is the user first name' do
         it 'returns the user with first name Test' do
           user = create(:user, first_name: 'Test')
-          another_user = create(:user, first_name: 'Another')
+          create(:user, first_name: 'Another')
 
           expect(User.search('tes')).to include(user)
         end
@@ -98,7 +98,7 @@ RSpec.describe User, type: :model do
       context 'when the query param is the user last name' do
         it 'returns the user with last name test' do
           user = create(:user, last_name: 'Test')
-          another_user = create(:user, last_name: 'Another')
+          create(:user, last_name: 'Another')
 
           expect(User.search('tes')).to include(user)
         end
