@@ -10,9 +10,6 @@
           <div class="meta">
             <span>@<%= @user.username %></span>
           </div>
-          <div class="description">
-            <p></p>
-          </div>
           <div class="extra">
             <%= t('views.user.member_since') %> <%= l(@user.created_at, format: :date_only) %>
           </div>
@@ -40,10 +37,12 @@
       <% @posts.each do |post| %>
         <div class="comment">
           <span class="avatar">
-            <%= image_tag post.user.avatar.url(:thumb) %>
+            <%= link_to user_path(post.user) do %>
+              <%= image_tag post.user.avatar.url(:thumb) %>
+            <% end %>
           </span>
           <div class="content">
-            <span class="author">@<%= post.user.username %></span>
+            <span class="author"><%= link_to "@#{post.user.username}", user_path(post.user) %></span>
             <div class="metadata">
               <span class="date"><%= l(post.created_at, format: :short) %></span>
             </div>
@@ -57,7 +56,7 @@
                   method: :delete,
                   data: { confirm: t('views.post.delete_confirmation') },
                   class: 'item' %>
-              </div>     
+              </div>
             <% end %>
           </div>
         </div>
