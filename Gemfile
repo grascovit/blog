@@ -6,7 +6,7 @@ ruby '2.5.0'
 
 gem 'aws-sdk-s3', '~> 1.30.1'
 gem 'bcrypt', '~> 3.1.12'
-gem 'bootsnap', '~> 1.3.2', require: false
+gem 'coffee-rails', '~> 4.2.2'
 gem 'draper', '~> 3.0.1'
 gem 'figaro', '~> 1.1.1'
 gem 'jquery-rails', '~> 4.3.3'
