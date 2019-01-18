@@ -7,7 +7,7 @@ FactoryBot.define do
   end
 
   factory :invalid_relationship do
-    follower nil
-    following nil
+    follower { nil }
+    following { nil }
   end
 end

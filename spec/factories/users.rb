@@ -10,10 +10,10 @@ FactoryBot.define do
   end
 
   factory :invalid_user, parent: :user do
-    first_name nil
-    last_name nil
-    username nil
-    email nil
-    password nil
+    first_name { nil }
+    last_name { nil }
+    username { nil }
+    email { nil }
+    password { nil }
   end
 end
