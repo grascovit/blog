@@ -7,7 +7,7 @@ FactoryBot.define do
   end
 
   factory :invalid_post, parent: :post do
-    message nil
-    user nil
+    message { nil }
+    user { nil }
   end
 end
