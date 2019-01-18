@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'aws-sdk'
+require 'aws-sdk-s3'
 
 Paperclip::Attachment.default_options.merge!(
   storage: Rails.env.test? ? :filesystem : :s3,
